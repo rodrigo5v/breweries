@@ -139,8 +139,8 @@ Quando quiser parar o AirFlow basta apertar CTRL + C em ambos os terminais.
 
 ### 5. Usando scripts desenvolvidos
 Dentro da pasta src neste repositório existe outros dois diretórios:
-    - dags | Contém a DAG que faz a orquestração dos códigos
-    - pipelines | Scripts Python desenvolvidos para a ingestão, tratamento e escrita dos dados.
+- dags | Contém a DAG que faz a orquestração dos códigos
+- pipelines | Scripts Python desenvolvidos para a ingestão, tratamento e escrita dos dados.
 
 A pasta de dags precisara ser colocada dentro da pasta airflow, que foi criada automaticamente ao rodar o pip install. Ela por padrão é criada fora da venv para armazenar dados persistentes.
 A pasta de pipelines precisara ser colocada dentro da pasta do ambiente virtual.
