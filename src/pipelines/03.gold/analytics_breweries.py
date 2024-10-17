@@ -1,11 +1,12 @@
 from delta import *
 from pyspark.sql import SparkSession
 
-spark = SparkSession.builder\
+builder = SparkSession.builder\
     .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension")\
     .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog")\
-    .appName("Gold layer")\
-    .getOrCreate()
+    .appName("Gold layer")
+
+spark = configure_spark_with_delta_pip(builder).getOrCreate()
 
 spark.sparkContext.setLogLevel("INFO")
 

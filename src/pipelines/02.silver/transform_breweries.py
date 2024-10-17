@@ -4,11 +4,12 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, lit
 from pyspark.sql.types import StructType, StructField, StringType
 
-spark = SparkSession.builder\
+builder = SparkSession.builder\
     .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension")\
     .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog")\
-    .appName("Silver layer")\
-    .getOrCreate()
+    .appName("Silver layer")
+
+spark = configure_spark_with_delta_pip(builder).getOrCreate()
 
 spark.sparkContext.setLogLevel("INFO")
 
